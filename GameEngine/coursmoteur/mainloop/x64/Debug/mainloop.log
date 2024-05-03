@@ -1,2 +1,37 @@
-﻿  ObjectArena.cpp
-C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\ObjectArena.cpp(2,10): fatal error C1014: fichiers Include trop nombreux : profondeur = 1024
+﻿  GameObject.cpp
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(10,40): error C2864: 'GameObject::m_pool' : un données membres statique avec un initialiseur de classe doit avoir un type intégral const non volatile ou être spécifié en tant que 'inline'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(10,40): message : le type est 'GameObject *'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(11,34): error C2864: 'GameObject::m_currentIndex' : un données membres statique avec un initialiseur de classe doit avoir un type intégral const non volatile ou être spécifié en tant que 'inline'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(11,34): message : le type est 'int'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(12,24): error C3646: 'g_Arena' : spécificateur de substitution inconnu
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(12,31): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(5,5): error C2065: 'g_Arena' : identificateur non déclaré
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(9,5): error C2065: 'g_Arena' : identificateur non déclaré
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(13,12): error C2065: 'g_Arena' : identificateur non déclaré
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(4,40): error C2084: la fonction 'void GameObject::CreatePool(int)' a déjà un corps
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(4): message : voir la définition précédente de 'CreatePool'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(5,5): error C2065: 'g_Arena' : identificateur non déclaré
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(8,32): error C2084: la fonction 'void GameObject::DestroyPool(void)' a déjà un corps
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(8): message : voir la définition précédente de 'DestroyPool'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(9,5): error C2065: 'g_Arena' : identificateur non déclaré
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(12,36): error C2084: la fonction 'GameObject *GameObject::Allocate(void)' a déjà un corps
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(12): message : voir la définition précédente de 'Allocate'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(13,12): error C2065: 'g_Arena' : identificateur non déclaré
+  ObjectArena.cpp
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(10,40): error C2864: 'GameObject::m_pool' : un données membres statique avec un initialiseur de classe doit avoir un type intégral const non volatile ou être spécifié en tant que 'inline'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(10,40): message : le type est 'GameObject *'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(11,34): error C2864: 'GameObject::m_currentIndex' : un données membres statique avec un initialiseur de classe doit avoir un type intégral const non volatile ou être spécifié en tant que 'inline'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(11,34): message : le type est 'int'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(12,24): error C3646: 'g_Arena' : spécificateur de substitution inconnu
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(12,31): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(5,5): error C2065: 'g_Arena' : identificateur non déclaré
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(9,5): error C2065: 'g_Arena' : identificateur non déclaré
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.cpp(13,12): error C2065: 'g_Arena' : identificateur non déclaré
+  Scene.cpp
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(10,40): error C2864: 'GameObject::m_pool' : un données membres statique avec un initialiseur de classe doit avoir un type intégral const non volatile ou être spécifié en tant que 'inline'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(10,40): message : le type est 'GameObject *'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(11,34): error C2864: 'GameObject::m_currentIndex' : un données membres statique avec un initialiseur de classe doit avoir un type intégral const non volatile ou être spécifié en tant que 'inline'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(11,34): message : le type est 'int'
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(12,24): error C3646: 'g_Arena' : spécificateur de substitution inconnu
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\GameObject.h(12,31): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  Génération de code en cours...

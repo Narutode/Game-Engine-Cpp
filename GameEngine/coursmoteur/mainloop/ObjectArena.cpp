@@ -1,27 +1,24 @@
-#include <cstdint>
-#include "GameObject.cpp"
-class ObjectArena
-{
-	// allocateur lineaire (linear allocator)
-	// tips: on peut desallouer le contenu en remettant le curseur a zero
-	uint8_t* m_memory;
-	uint32_t m_cursor; // position du premier octet libre
-public:
-	void Initialise(uint32_t taille) {
-		m_memory = new uint8_t[taille];
-	}
-	void Destroy() {
-		delete[] m_memory;
-	}
-	GameObject* ObjectArena::AllocateGameObject()
-	{
-		GameObject* data = (GameObject*)&m_memory[m_cursor];
-		m_cursor += sizeof(GameObject);
-		// placement new
-		// utile lorsque la zone mémoire existe déjà et
-		// que l'on souhaite appeler explicitement le constructeur
-		::operator new(sizeof(GameObject), data);
-		return data;
-	}
+#include "ObjectArena.h"
+#include "GameObject.h"
 
-};
+void ObjectArena::Initialise(uint32_t taille) {
+    m_memory = new uint8_t[taille];
+    m_cursor = 0;
+    m_capacity = taille;
+}
+
+void ObjectArena::Destroy() {
+    delete[] m_memory;
+}
+
+GameObject* ObjectArena::AllocateGameObject() {
+    if (m_cursor + sizeof(GameObject) > m_capacity) {
+        // Gestion d'une capacité insuffisante : Vous pouvez choisir de lever une exception ou de gérer autrement cette situation.
+        return nullptr;
+    }
+
+    GameObject* data = reinterpret_cast<GameObject*>(&m_memory[m_cursor]);
+    m_cursor += sizeof(GameObject);
+    new (data) GameObject(); // Utilisation de placement new pour appeler le constructeur
+    return data;
+}
