@@ -1,10 +1,12 @@
 #include "ObjectArena.h"
 #include "GameObject.h"
+#include <iostream>
 
 void ObjectArena::Initialise(uint32_t taille) {
     m_memory = new uint8_t[taille];
     m_cursor = 0;
     m_capacity = taille;
+    std::cout << "[Object arena] init" << std::endl;
 }
 
 void ObjectArena::Destroy() {

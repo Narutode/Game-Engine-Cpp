@@ -16,6 +16,9 @@
 #include <iostream>
 #include <vector>
 #include <thread>
+#include "Scene.cpp"
+#include "Transform.cpp"
+#include "Behavior.cpp"
 
 namespace ESGI
 {
@@ -49,6 +52,8 @@ namespace ESGI
 
 	struct Application
 	{
+		Scene* m_scene;
+
 		// ce vecteur va nous permettre d'iterer sur l'ensemble des elements du moteur sans les nommer individuellement
 		std::vector<InfraStructure*> m_cores;
 
@@ -59,11 +64,11 @@ namespace ESGI
 
 		bool m_needToQuit = false;
 
-		Application(EngineContext& context) : m_context(context) {}
+		Application(EngineContext& context) : m_context(context), m_scene(new Scene) {}
 		Application() :
-			Application(Application::CreateContext())				// Depuis le C++11 un constructeur peut en appeler un autre
+			Application(Application::CreateContext())// Depuis le C++11 un constructeur peut en appeler un autre
 		{}
-		Application(Application& app) = delete;						// une application ne peut etre dupliquee
+		Application(Application& app) = delete;// une application ne peut etre dupliquee
 
 
 
@@ -83,7 +88,7 @@ namespace ESGI
 			Clock* clock = new ESGI::Clock;
 			Input* input = new ESGI::Input;
 			Engine* engine = new ESGI::Engine;
-
+			Scene* m_scene = new Scene;
 			static EngineContext context(*clock, *input, *engine);
 			return context;
 		}
@@ -163,11 +168,31 @@ namespace ESGI
 				initOk &= Initialize();
 			}
 
+
+			GameObject* go = new GameObject("tag1");
+			GameObject* go2 = new GameObject("tag2");
+
+			m_scene->AddGameObject(go);
+			m_scene->AddGameObject(go2);
+			m_scene->RemoveGameObject(go);
+
+			std::vector<GameObject*> list1 = m_scene->FindObjectsWithTag("tag1");
+			std::vector<GameObject*> list2 = m_scene->FindObjectsWithTag("tag2");
+
+			std::cout << "tag1 nb : " << list1.size() << std::endl;
+			std::cout << "tag2 nb : " << list2.size() << std::endl;
+
+			GameObject* go3 = new GameObject("tag1");
+			Transform* tr = new Transform(0,0,0);
+			Behavior* ba = new Behavior();
+			go3->AddComponent(tr);
+			go3->AddComponent(ba);
+
 			m_needToQuit = !initOk;
 
 			while (!m_needToQuit)
 			{
-				std::cout << "[Application] frame # " << m_frameIndex << std::endl;
+				//std::cout << "[Application] frame # " << m_frameIndex << std::endl;
 				
 				Update();
 				

@@ -1,15 +1,18 @@
 #include "GameObject.h"
 #include <string>
 #include <vector>
+#include <iostream>
 class Scene {
-
+public:
     std::vector<GameObject*> m_gameObjects;
 
     void Scene::AddGameObject(GameObject* gameObject) {
+        std::cout << "[Scene] add game object " << gameObject->tag << std::endl;
         m_gameObjects.push_back(gameObject);
     }
 
     void Scene::RemoveGameObject(GameObject* gameObject) {
+        std::cout << "[Scene] delete game object " << gameObject->tag << std::endl;
         // Recherche et suppression de l'objet du vecteur
         auto it = std::find(m_gameObjects.begin(), m_gameObjects.end(), gameObject);
         if (it != m_gameObjects.end()) {

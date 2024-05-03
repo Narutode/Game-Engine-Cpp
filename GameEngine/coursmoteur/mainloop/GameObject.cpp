@@ -16,3 +16,7 @@ void GameObject::DestroyPool() {
 GameObject* GameObject::Allocate() {
     return g_Arena.AllocateGameObject();
 }
+
+void GameObject::AddComponent(Component* comp) {
+    components.push_back(comp);
+}
