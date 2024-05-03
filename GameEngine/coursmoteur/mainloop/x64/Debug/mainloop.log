@@ -1,6 +1,2 @@
-﻿  Engine.cpp
-  mainloop.cpp
-  Input.cpp
-  Timer.cpp
-  Génération de code en cours...
-  mainloop.vcxproj -> C:\Users\zheng\Downloads\exemple_mainloop\coursmoteur\x64\Debug\mainloop.exe
+﻿  ObjectArena.cpp
+C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\ObjectArena.cpp(2,10): fatal error C1014: fichiers Include trop nombreux : profondeur = 1024
