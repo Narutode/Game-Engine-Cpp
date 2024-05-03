@@ -1,8 +1,9 @@
 #pragma once
-#include <cstdint>
-#include "GameObject.cpp"
 
-class GameObject; // Forward declaration
+#include <cstdint>
+
+// Déclaration avancée de la classe GameObject pour éviter l'inclusion cyclique
+class GameObject;
 
 class ObjectArena
 {
