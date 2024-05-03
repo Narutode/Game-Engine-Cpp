@@ -4,7 +4,7 @@
 #include <string>
 #include "ObjectArena.h"
 #include <vector>
-#include "Component.cpp"
+#include "Component.h"
 
 class GameObject
 {

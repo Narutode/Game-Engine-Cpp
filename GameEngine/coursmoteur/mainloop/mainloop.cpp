@@ -17,6 +17,7 @@
 #include <vector>
 #include <thread>
 #include "Scene.cpp"
+#include "Component.cpp";
 #include "Transform.cpp"
 #include "Behavior.cpp"
 
@@ -183,10 +184,12 @@ namespace ESGI
 			std::cout << "tag2 nb : " << list2.size() << std::endl;
 
 			GameObject* go3 = new GameObject("tag1");
-			Transform* tr = new Transform(0,0,0);
+			Transform* tr = new Transform(0,1,2);
 			Behavior* ba = new Behavior();
 			go3->AddComponent(tr);
 			go3->AddComponent(ba);
+
+			std::cout << "compnent nb : " << go3->components.size() << std::endl;
 
 			m_needToQuit = !initOk;
 

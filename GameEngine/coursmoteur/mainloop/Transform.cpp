@@ -1,5 +1,5 @@
 // Définition de la classe Transform qui hérite de Component
-#include "Component.cpp";
+#include "Component.h";
 class Transform : public Component {
 private:
     float x, y, z; // Coordonnées de transformation

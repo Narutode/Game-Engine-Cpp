@@ -1,5 +1,6 @@
 #include "GameObject.h"
 #include "ObjectArena.h"
+#include <iostream>
 
 GameObject* GameObject::m_pool = nullptr;
 int GameObject::m_currentIndex = 0;
@@ -18,5 +19,6 @@ GameObject* GameObject::Allocate() {
 }
 
 void GameObject::AddComponent(Component* comp) {
+    std::cout << "[GameObject] add component" << std::endl;
     components.push_back(comp);
 }
