@@ -1,5 +1,8 @@
-﻿  mainloop.cpp
-C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\mainloop.cpp(20,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
-C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\Transform.cpp(2,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
-C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\mainloop\Behavior.cpp(1,10): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
+﻿  Behavior.h
+  GameObject.cpp
+  GameObjectFactory.cpp
+  ObjectArena.cpp
+  Scene.cpp
+  Transform.h
+  Génération de code en cours...
   mainloop.vcxproj -> C:\Users\HP\Desktop\Projets ESGI\Game-Engine-Cpp\GameEngine\coursmoteur\x64\Debug\mainloop.exe

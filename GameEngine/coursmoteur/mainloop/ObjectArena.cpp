@@ -24,3 +24,7 @@ GameObject* ObjectArena::AllocateGameObject() {
     new (data) GameObject(); // Utilisation de placement new pour appeler le constructeur
     return data;
 }
+
+void ObjectArena::DeallocateObject(GameObject* go) {
+    go->~GameObject();
+}

@@ -17,9 +17,12 @@
 #include <vector>
 #include <thread>
 #include "Scene.cpp"
-#include "Component.cpp";
-#include "Transform.cpp"
-#include "Behavior.cpp"
+#include "Component.h"
+#include "Transform.h"
+#include "Behavior.h"
+#include "GameObjectFactory.cpp"
+#include "ComponentFactory.cpp"
+
 
 namespace ESGI
 {
@@ -158,6 +161,8 @@ namespace ESGI
 			m_context.Input().Update();
 			
 			m_context.Engine().Update(m_context);
+
+			m_scene->UpdateGameObject();
 		}
 
 		// main loop
@@ -169,12 +174,15 @@ namespace ESGI
 				initOk &= Initialize();
 			}
 
+			//GameObject* go = GameObjectFactory::CreateGameObject("tag 1");
+			//GameObject* go2 = GameObjectFactory::CreateGameObject("tag 2");
 
-			GameObject* go = new GameObject("tag1");
-			GameObject* go2 = new GameObject("tag2");
+			GameObject* go = m_scene->AddGameObject();
+			GameObject* go2 = m_scene->AddGameObject();
 
-			m_scene->AddGameObject(go);
-			m_scene->AddGameObject(go2);
+			go->setTag("tag1");
+			go2->setTag("tag2");
+
 			m_scene->RemoveGameObject(go);
 
 			std::vector<GameObject*> list1 = m_scene->FindObjectsWithTag("tag1");
@@ -183,14 +191,15 @@ namespace ESGI
 			std::cout << "tag1 nb : " << list1.size() << std::endl;
 			std::cout << "tag2 nb : " << list2.size() << std::endl;
 
-			GameObject* go3 = new GameObject("tag1");
-			Transform* tr = new Transform(0,1,2);
-			Behavior* ba = new Behavior();
+			/*
+			GameObject* go3 = new GameObject("tag1"); 
+			Component* tr = ComponentFactory::CreateComponent(ComponentType::Transform);
+			Component* ba = ComponentFactory::CreateComponent(ComponentType::Behavior);
 			go3->AddComponent(tr);
 			go3->AddComponent(ba);
 
 			std::cout << "compnent nb : " << go3->components.size() << std::endl;
-
+			*/
 			m_needToQuit = !initOk;
 
 			while (!m_needToQuit)
@@ -206,6 +215,8 @@ namespace ESGI
 
 				m_frameIndex++;
 			}
+
+			m_scene->m_gameObjects->Destroy();
 
 			DeInitialize();
 
